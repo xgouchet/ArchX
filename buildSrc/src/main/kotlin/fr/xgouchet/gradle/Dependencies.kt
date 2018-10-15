@@ -10,6 +10,7 @@ object Dependencies {
         const val AndroidSupportLibs = "27.1.1"
         const val AndroidX = "1.0.0"
         const val AndroidXArch = "2.0.0-rc01"
+        const val AndroidMaven = "2.1"
         const val MultiDex = "2.0.0"
         const val ConstraintLayout = "1.1.2"
         const val MaterialComponents = "1.0.0"
@@ -90,6 +91,7 @@ object Dependencies {
         const val AndroidPlugin = "com.android.tools.build:gradle:${Versions.AndroidPlugin}"
         const val OssLicencesPlugin = "com.google.gms:oss-licenses:${Versions.OssLicensesPlugin}"
         const val KotlinPlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.Kotlin}"
+        const val AndroidMavenPlugin = "com.github.dcendents:android-maven-gradle-plugin:${Versions.AndroidMaven}"
     }
 
     object PluginNamespaces {

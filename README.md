@@ -7,6 +7,8 @@
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://opensource.org/licenses/MIT)
 [![Kotlin 1.2.70](https://img.shields.io/badge/Kotlin-1.2.70-blue.svg)](http://kotlinlang.org)
 
+
+[![Release](https://jitpack.io/v/xgouchet/ArchX.svg)](https://jitpack.io/#xgouchet/ArchX)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/xaviergouchet)
 
 This library is in no mean intended to be a silver bullet for any screen, but just provides a simplification when writing a new app from scratch. It's still a work in progress, so there's no documentation or sample yet.
