@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                 xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                 xmlns:tools="http://schemas.android.com/tools"
+                                                 android:layout_width="match_parent"
+                                                 android:layout_height="match_parent">
+
+    <FrameLayout
+            android:id="@id/archx_root_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@id/archx_fab"
+            android:layout_width="@dimen/fab_size"
+            android:layout_height="@dimen/fab_size"
+            android:layout_margin="@dimen/fab_margin"
+            android:visibility="gone"
+            app:layout_anchor="@id/archx_root_fragment"
+            app:layout_anchorGravity="bottom|right|end"
+            tools:src="@android:drawable/ic_dialog_email"
+            tools:visibility="visible"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

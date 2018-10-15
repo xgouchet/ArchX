@@ -1,0 +1,62 @@
+import fr.xgouchet.gradle.AndroidBuild
+import fr.xgouchet.gradle.Dependencies
+
+plugins {
+    id 'com.github.ben-manes.versions'
+    id "io.gitlab.arturbosch.detekt"
+}
+
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion AndroidBuild.TargetSdk
+    buildToolsVersion AndroidBuild.BuildTools
+
+    defaultConfig {
+        minSdkVersion AndroidBuild.MinSdk
+        targetSdkVersion AndroidBuild.TargetSdk
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    lintOptions {
+        lintConfig rootProject.file("$project.rootDir/gradle/lint.xml")
+    }
+
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+}
+
+androidExtensions {
+    experimental = true
+}
+
+dependencies {
+
+    implementation Dependencies.Libraries.Kotlin
+    implementation Dependencies.Libraries.AndroidSupport
+
+    implementation Dependencies.Libraries.AndroidSupportDesign
+    implementation Dependencies.Libraries.MaterialComponents
+    implementation Dependencies.Libraries.AndroidRecyclerView
+    implementation Dependencies.Libraries.AndroidConstraintLayout
+
+//    implementation Dependencies.Libraries.AndroidArchComponents
+//    implementation Dependencies.Libraries.AndroidSupport
+//    implementation Dependencies.Libraries.Kotlin
+//    api Dependencies.Libraries.Rx
+//    implementation Dependencies.Libraries.Timber
+//    testImplementation Dependencies.Libraries.Testing
+//    unmock Dependencies.Libraries.Robolectric
+}
+
+configurations {
+    compile.exclude group: 'com.android.support', module: 'support-v4'
+}

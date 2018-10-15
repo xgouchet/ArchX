@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="archx_root_fragment" type="id"/>
+    <item name="archx_fab" type="id"/>
+    <item name="archx_swipe_refresh" type="id"/>
+    <item name="archx_recycler" type="id"/>
+</resources>
