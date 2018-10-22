@@ -20,6 +20,14 @@ abstract class ArchXAdapter<VM, VH>
 
     // endregion
 
+    // region ArchXAdapter
+
+    fun getItem(position: Int): VM? {
+        return data.getOrNull(position)
+    }
+
+    // endregion
+
     // region Open
 
     open fun updateData(data: List<VM>) {

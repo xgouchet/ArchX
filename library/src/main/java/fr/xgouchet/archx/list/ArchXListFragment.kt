@@ -46,7 +46,7 @@ abstract class ArchXListFragment<VM, A>
     open val accentColor: Int? = null
     open val dividerDrawable: Int? = null
 
-    protected abstract val hasPagination: Boolean
+    protected open val hasPagination: Boolean = false
 
     // endregion
 
