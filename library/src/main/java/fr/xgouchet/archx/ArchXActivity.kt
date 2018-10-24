@@ -14,11 +14,17 @@ abstract class ArchXActivity<P, V, VM>
               V : ArchXView<VM> {
 
 
-    private lateinit var fragment: V
-    private lateinit var presenter: P
+    protected lateinit var fragment: V
+        private set
 
-    private var isRestored: Boolean = false
-    private lateinit var fab: FloatingActionButton
+    protected lateinit var presenter: P
+        private set
+
+    protected var isRestored: Boolean = false
+        private set
+
+    protected lateinit var fab: FloatingActionButton
+        private set
 
 
     // region Activity Lifecycle

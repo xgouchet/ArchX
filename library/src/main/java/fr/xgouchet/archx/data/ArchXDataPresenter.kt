@@ -7,8 +7,9 @@ import fr.xgouchet.archx.ArchXView
 import fr.xgouchet.archx.ArchXViewModelTransformer
 
 abstract class ArchXDataPresenter<D, V, VM>(
-        private val owner: LifecycleOwner,
+        protected val owner: LifecycleOwner,
         protected val dataSource: ArchXDataSource<D>,
+        protected val dataSink: ArchXDataSink<D>,
         protected val transformer: ArchXViewModelTransformer<D, VM>
 ) : ArchXPresenter<VM>,
         Observer<D>
@@ -40,4 +41,5 @@ abstract class ArchXDataPresenter<D, V, VM>(
         view?.showData(viewModel)
     }
 
+    // endregion
 }
