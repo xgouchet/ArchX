@@ -19,7 +19,7 @@ abstract class ArchXListFragment<VM, A>
     : Fragment(),
         SwipeRefreshLayout.OnRefreshListener,
         ArchXListView<VM>
-        where A : ArchXAdapter<*, *> {
+        where A : ArchXAdapter<*, *, *> {
 
     protected var presenter: ArchXPresenter<List<VM>>? = null
 

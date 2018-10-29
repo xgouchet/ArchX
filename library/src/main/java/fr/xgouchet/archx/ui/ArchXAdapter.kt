@@ -1,9 +1,11 @@
 package fr.xgouchet.archx.ui
 
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 
-abstract class ArchXAdapter<VM, VH>
-    : RecyclerView.Adapter<VH>()
+abstract class ArchXAdapter<VM, VH, I>(
+        protected val extractId: ((VM) -> I)?
+) : RecyclerView.Adapter<VH>()
         where VH : ArchXViewHolder<VM> {
 
     private var data: List<VM> = emptyList()
@@ -31,9 +33,15 @@ abstract class ArchXAdapter<VM, VH>
     // region Open
 
     open fun updateData(data: List<VM>) {
-        this.data = data
-        notifyDataSetChanged()
-        // TODO include diffutils.callback
+        if (extractId == null) {
+            this.data = data
+            notifyDataSetChanged()
+        } else {
+            val callback = ArchXDiffUtilCallback(this.data, data, extractId)
+            val updates = DiffUtil.calculateDiff(callback)
+            updates.dispatchUpdatesTo(this)
+            this.data = data
+        }
     }
 
     open fun getSpanSize(position: Int): Int {
