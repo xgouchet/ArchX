@@ -1,5 +1,6 @@
 package fr.xgouchet.archx.rx
 
+import io.reactivex.Flowable
 import io.reactivex.Maybe
 import io.reactivex.Observable
 import io.reactivex.Scheduler
@@ -23,7 +24,7 @@ fun <T> Single<T>.schedule(schedulerProvider: SchedulerProvider): Single<T> {
             .observeOn(schedulerProvider.observeOn())
 }
 
-fun <T> Observable<T>.schedule(schedulerProvider: SchedulerProvider): Observable<T> {
+fun <T> Flowable<T>.schedule(schedulerProvider: SchedulerProvider): Flowable<T> {
     return subscribeOn(schedulerProvider.subscribeOn())
             .observeOn(schedulerProvider.observeOn())
 }
