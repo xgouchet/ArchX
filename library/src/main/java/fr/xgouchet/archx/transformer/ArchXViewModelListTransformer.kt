@@ -1,4 +1,4 @@
-package fr.xgouchet.archx
+package fr.xgouchet.archx.transformer
 
 open class ArchXViewModelListTransformer<AM, VM>(
         protected val delegate: ArchXViewModelTransformer<AM, VM>
@@ -8,4 +8,8 @@ open class ArchXViewModelListTransformer<AM, VM>(
         return appModel.map { delegate.transform(it) }
     }
 
+}
+
+fun <AM, VM> ArchXViewModelTransformer<AM, VM>.toListTransformer(): ArchXViewModelTransformer<List<AM>, List<VM>> {
+    return ArchXViewModelListTransformer(this)
 }

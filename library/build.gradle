@@ -42,44 +42,21 @@ dependencies {
 
     implementation Dependencies.Libraries.Kotlin
     implementation Dependencies.Libraries.AndroidSupport
-
     implementation Dependencies.Libraries.AndroidSupportDesign
     implementation Dependencies.Libraries.MaterialComponents
     implementation Dependencies.Libraries.AndroidRecyclerView
     implementation Dependencies.Libraries.AndroidConstraintLayout
 
-//    implementation Dependencies.Libraries.AndroidArchComponents
-//    implementation Dependencies.Libraries.AndroidSupport
-//    implementation Dependencies.Libraries.Kotlin
-//    api Dependencies.Libraries.Rx
-//    implementation Dependencies.Libraries.Timber
-//    testImplementation Dependencies.Libraries.Testing
-//    unmock Dependencies.Libraries.Robolectric
+    api Dependencies.Libraries.Rx
+
 }
 
 configurations {
     compile.exclude group: 'com.android.support', module: 'support-v4'
 }
 
-
 // Additional tasks for jitpack.io
 
 apply plugin: 'com.github.dcendents.android-maven'
-group='com.github.xgouchet'
+group = 'com.github.xgouchet'
 
-//// build a jar with source files
-//task sourcesJar(type: Jar) {
-//    from sourceSets.main.java.srcDirs
-//    classifier = 'sources'
-//}
-//
-//// build a jar with javadoc
-//task javadocJar(type: Jar, dependsOn: javadoc) {
-//    classifier = 'javadoc'
-//    from javadoc.destinationDir
-//}
-//
-//artifacts {
-//    archives sourcesJar
-//    archives javadocJar
-//}

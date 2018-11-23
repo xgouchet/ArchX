@@ -126,7 +126,7 @@ abstract class ArchXActivity<P, V, VM>
             return instantiatePresenter()
         }
 
-        return ArchXPresenterCache.getPresenter<P>(key) { instantiatePresenter() }
+        return ArchXPresenterCache.getPresenter(key) { instantiatePresenter() }
     }
 
     // endregion

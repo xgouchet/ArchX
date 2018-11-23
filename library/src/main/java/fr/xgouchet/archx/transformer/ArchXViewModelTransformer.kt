@@ -1,4 +1,4 @@
-package fr.xgouchet.archx
+package fr.xgouchet.archx.transformer
 
 interface ArchXViewModelTransformer<AM, VM> {
 

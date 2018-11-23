@@ -1,9 +1,13 @@
 package fr.xgouchet.archx.data
 
-import androidx.lifecycle.LiveData
+import io.reactivex.Observable
+import io.reactivex.Single
+
 
 interface ArchXDataSource<D> {
 
-    fun getData(): LiveData<D>
+    fun getData(): Single<D>
+
+    fun listenData(): Observable<D>
 
 }
